@@ -182,7 +182,7 @@ class _QuizPageState extends State<QuizPage> {
                               checkAnswer();
                             },
                             child: Options(
-                              option: options.toString().replaceAll("&#039;", '\''),
+                              option: options.toString().replaceAll("&#039;", '\'').replaceAll('&quot;', ''),
                               isCorrect: false,
                             )),
                       );
@@ -283,7 +283,7 @@ class _QuizPageState extends State<QuizPage> {
     String correctOption = responseData[number]['correct_answer'];
     if (score == correctOption) {
       Provider.of<ScoreProvider>(context, listen: false).addCorrectAnswer();
-    } else {
+    } else if(score!= correctOption){
       Provider.of<ScoreProvider>(context, listen: false).addIncorrectAnswer();
     }
   }

@@ -228,9 +228,8 @@ class CompletePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return HomeScreen();
-                        }));
+                        score.resetScore();
+                        Navigator.pop(context);
                       },
                       child: CircleAvatar(
                         radius: 35,
