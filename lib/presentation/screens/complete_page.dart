@@ -341,6 +341,7 @@ class CompletePage extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: (){
+                        score.resetScore();
                         Navigator.pop(context);
                       },
                       child: CircleAvatar(
